@@ -1,0 +1,21 @@
++SingularityImage = "stash:///osgconnect/protected/shafayetrahat/gromacs18-martini3.sif"
+request_cpus = 8
+request_memory = 4GB
+request_disk = 4GB
+
+should_transfer_files   = Yes
+
+when_to_transfer_output = ON_EXIT
+#Periodic_release  = (Holdreasoncode == 13 && holdreasonsubcode == 256 && NumJobStarts < 100)
+executable   = run.sh
+#arguments    = $(ProcID)
+output       = out/$(Cluster).out
+error        = err/$(Cluster).err
+log          = log/$(Cluster).log
+#STASH = stash:///osgconnect/public/shafayetrahat/martini
+#OUT = stash:///osgconnect/protected/shafayetrahat/martini_out
+#transfer_input_files =  $(STASH)/input/test.tar.gz
+transfer_output_files = out.txt
+#transfer_output_remaps = "prod.$(ProcID).xtc=$(OUT)/prod.$(ProcID).xtc"
+
+queue 1

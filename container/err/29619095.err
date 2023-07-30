@@ -1,0 +1,2 @@
+which: no gmx_d in (/local-scratch/glide_xk5QS8/.gwms.d/bin::/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin)
+/local-scratch/glide_xk5QS8/execute/dir_21763/condor_exec.exe: line 4: gmx_d: command not found

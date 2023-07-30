@@ -1,0 +1,78 @@
+Bootstrap: docker
+From: ubuntu:20.04
+
+%post
+export DEBIAN_FRONTEND=noninteractive && export TZ=Asia/Dhaka && apt-get update && apt-get -y install gcc procps python2-minimal wget cmake build-essential clang clang-tools
+wget -c https://bootstrap.pypa.io/pip/2.7/get-pip.py
+python2 get-pip.py
+wget -c ftp://ftp.gromacs.org/pub/gromacs/gromacs-2018.8.tar.gz
+wget -c https://ftp.gromacs.org/regressiontests/regressiontests-2018.tar.gz
+tar xvzf gromacs-2018.8.tar.gz 
+tar xvzf regressiontests-2018.tar.gz
+cd gromacs-2018.8 
+mkdir build 
+cd build 
+cmake .. -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=OFF -DCMAKE_C_COMPILER=gcc -DREGRESSIONTEST_PATH=/regressiontests-2018/
+
+#cmake .. -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=OFF -DCMAKE_C_COMPILER=gcc -DREGRESSIONTEST_PATH=/regressiontests-2018/ -DGMX_DOUBLE=ON
+make -j8
+make check 
+make install
+rm -r /gromacs-2018*
+rm -r /regressiontests*
+mkdir -p /etc/grid-security && \
+cd /etc/grid-security && \
+wget -nv https://download.pegasus.isi.edu/containers/certificates.tar.gz && \
+tar xzf certificates.tar.gz && \
+rm -f certificates.tar.gz
+# required directories
+for MNTPOINT in \
+/cvmfs \
+/hadoop \
+/hdfs \
+/lizard \
+/mnt/hadoop \
+/mnt/hdfs \
+/xenon \
+/spt \
+/stash2 \
+; do \
+mkdir -p $MNTPOINT ; \
+done
+
+# make sure we have a way to bind host provided libraries
+# see https://github.com/singularityware/singularity/issues/611
+mkdir -p /etc/OpenCL/vendors
+
+# some extra singularity stuff
+
+# build info
+echo "Timestamp:" `date --utc` | tee /image-build-info.txt
+
+
+%files
+./runfiles/* /
+.singularity.d /.singularity.d
+
+%environment
+export GMX_MAXCONSTRWARN=-1
+GMXPREFIX=/usr/local/gromacs
+GMXBIN=${GMXPREFIX}/bin
+GMXLDLIB=${GMXPREFIX}/lib
+GMXMAN=${GMXPREFIX}/share/man
+GMXDATA=${GMXPREFIX}/share/gromacs
+GMXTOOLCHAINDIR=${GMXPREFIX}/share/cmake
+GROMACS_DIR=${GMXPREFIX}
+
+LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMXLDLIB}
+PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${GMXLDLIB}/pkgconfig
+PATH=${PATH}:${GMXBIN}
+
+export GMXBIN GMXLDLIB GMXMAN GMXDATA LD_LIBRARY_PATH PATH 
+export PKG_CONFIG_PATH GROMACS_DIR
+
+%runscript
+exec /bin/bash "$@"
+
+%startscript
+exec /bin/bash "$@"

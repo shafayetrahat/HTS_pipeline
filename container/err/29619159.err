@@ -1,0 +1,2 @@
+ls: cannot access /usr/local/gromacs: No such file or directory
+ls: cannot access /usr/local/gromacs/bin: No such file or directory

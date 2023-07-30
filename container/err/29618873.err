@@ -1,0 +1,1 @@
+FATAL:   exec /srv//condor_exec.exe failed: fork/exec /srv//condor_exec.exe: no such file or directory

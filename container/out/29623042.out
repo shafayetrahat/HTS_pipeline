@@ -1,0 +1,13 @@
+bin
+include
+lib
+share
+GMXRC
+GMXRC.bash
+GMXRC.csh
+GMXRC.zsh
+demux.pl
+gmx-completion-gmx_d.bash
+gmx-completion.bash
+gmx_d
+xplor2gmx.pl

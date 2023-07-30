@@ -1,0 +1,38 @@
+000 (29618822.000.000) 2023-03-06 16:35:49 Job submitted from host: <192.170.231.218:9618?addrs=192.170.231.218-9618+[2605-9a00-10-200b-e643-4bff-fe9e-1f52]-9618&alias=login05.osgconnect.net&noUDP&sock=schedd_1932518_2fc0>
+    WARNING: Committed job submission into the queue with the following warning(s): QMGMT:0:Do not use HTCondor file transfers for container images as it does not scale to a large number of jobs. Instead, use Stash/OSDF: https://portal.osg-htc.org/documentation/htc_workloads/using_software/containers/#custom-singularity-images
+...
+040 (29618822.000.000) 2023-03-06 16:37:11 Started transferring input files
+	Transferring to host: <128.105.68.107:45085?CCBID=128.104.103.162:9618%3faddrs%3d128.104.103.162-9618%26alias%3dospool-ccb.osg.chtc.io%26noUDP%26sock%3dcollector3#9127427%20192.170.236.224:9618%3faddrs%3d192.170.236.224-9618+[fd12-3456-789a-10fb-8f8d-c136-1698-b4a3]-9618%26alias%3d192.170.236.224%26noUDP%26sock%3dcollector4#1052960&PrivNet=xhuanggpu4000.chtc.wisc.edu&addrs=128.105.68.107-45085+[2607-f388-2200-100-3eec-efff-fed2-169e]-45085&alias=xhuanggpu4000.chtc.wisc.edu&noUDP>
+...
+040 (29618822.000.000) 2023-03-06 16:37:13 Finished transferring input files
+...
+021 (29618822.000.000) 2023-03-06 16:37:14 Warning from starter on slot1_1@glidein_1720827_174387296@xhuanggpu4000.chtc.wisc.edu:
+	PREPARE_JOB (prepare-hook) succeeded (reported status 000): Using Singularity image gromacs18-martini3.sif
+...
+001 (29618822.000.000) 2023-03-06 16:37:14 Job executing on host: <128.105.68.107:43265?CCBID=128.104.103.162:9618%3faddrs%3d128.104.103.162-9618%26alias%3dospool-ccb.osg.chtc.io%26noUDP%26sock%3dcollector4#9125425%20192.170.236.224:9618%3faddrs%3d192.170.236.224-9618+[fd12-3456-789a-10fb-8f8d-c136-1698-b4a3]-9618%26alias%3d192.170.236.224%26noUDP%26sock%3dcollector3#1053697&PrivNet=xhuanggpu4000.chtc.wisc.edu&addrs=128.105.68.107-43265+[2607-f388-2200-100-3eec-efff-fed2-169e]-43265&alias=xhuanggpu4000.chtc.wisc.edu&noUDP>
+...
+006 (29618822.000.000) 2023-03-06 16:37:16 Image size of job updated: 1
+	6  -  MemoryUsage of job (MB)
+	6092  -  ResidentSetSize of job (KB)
+...
+040 (29618822.000.000) 2023-03-06 16:37:16 Started transferring output files
+...
+040 (29618822.000.000) 2023-03-06 16:37:16 Finished transferring output files
+...
+005 (29618822.000.000) 2023-03-06 16:37:16 Job terminated.
+	(1) Normal termination (return value 255)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	103  -  Run Bytes Sent By Job
+	951259200  -  Run Bytes Received By Job
+	103  -  Total Bytes Sent By Job
+	951259200  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :                 8         8 
+	   Disk (KB)            :   929059  4194304  13996649 
+	   Memory (MB)          :        6     4096      4096 
+
+	Job terminated of its own accord at 2023-03-06T22:37:16Z with exit-code 255.
+...

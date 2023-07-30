@@ -1,0 +1,16 @@
+GMXPREFIX=/usr/local/gromacs
+GMXBIN=${GMXPREFIX}/bin
+GMXLDLIB=${GMXPREFIX}/lib
+GMXMAN=${GMXPREFIX}/share/man
+GMXDATA=${GMXPREFIX}/share/gromacs
+GMXTOOLCHAINDIR=${GMXPREFIX}/share/cmake
+GROMACS_DIR=${GMXPREFIX}
+
+LD_LIBRARY_PATH=$(replace_in_path "${LD_LIBRARY_PATH}" "${GMXLDLIB}" "${OLD_GMXLDLIB}")
+PKG_CONFIG_PATH=$(replace_in_path "${PKG_CONFIG_PATH}" "${GMXLDLIB}/pkgconfig" "${OLD_GMXLDLIB}/pkgconfig")
+PATH=$(replace_in_path "${PATH}" "${GMXBIN}" "${OLD_GMXBIN}")
+
+# export should be separate, so /bin/sh understands it
+export GMXBIN GMXLDLIB GMXMAN GMXDATA LD_LIBRARY_PATH PATH MANPATH
+export PKG_CONFIG_PATH GROMACS_DIR
+

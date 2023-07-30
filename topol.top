@@ -1,0 +1,16 @@
+#include "martini_v3.0.b.3.2.itp"
+#include "martini_v3.0_ions.itp"
+#include "martini_v3.0_solvents.itp"
+#include "Protein_A.itp"
+
+[ system ]
+; name
+Martini system from 181L.pdb
+
+[ molecules ]
+; name        number
+Protein_A 	 1
+WN 	 	 8591
+TNA 	 	 91
+TCL 	 	 99
+BENZ 	 	 1

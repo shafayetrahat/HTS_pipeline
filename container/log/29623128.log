@@ -1,0 +1,37 @@
+000 (29623128.000.000) 2023-03-06 18:24:47 Job submitted from host: <192.170.231.218:9618?addrs=192.170.231.218-9618+[2605-9a00-10-200b-e643-4bff-fe9e-1f52]-9618&alias=login05.osgconnect.net&noUDP&sock=schedd_1932518_2fc0>
+...
+040 (29623128.000.000) 2023-03-06 18:28:11 Started transferring input files
+	Transferring to host: <10.138.25.23:44623?CCBID=128.104.103.162:9618%3faddrs%3d128.104.103.162-9618%26alias%3dospool-ccb.osg.chtc.io%26noUDP%26sock%3dcollector4#9135328%20192.170.236.224:9618%3faddrs%3d192.170.236.224-9618+[fd12-3456-789a-10fb-8f8d-c136-1698-b4a3]-9618%26alias%3d192.170.236.224%26noUDP%26sock%3dcollector1#1058391&PrivNet=c2523.crane.hcc.unl.edu&addrs=10.138.25.23-44623&alias=c2523.crane.hcc.unl.edu&noUDP>
+...
+040 (29623128.000.000) 2023-03-06 18:28:15 Finished transferring input files
+...
+021 (29623128.000.000) 2023-03-06 18:28:16 Warning from starter on slot1_1@glidein_1024048_65127996@c2523.crane.hcc.unl.edu:
+	PREPARE_JOB (prepare-hook) succeeded (reported status 000): Using Singularity image gromacs18-martini3.sif
+...
+001 (29623128.000.000) 2023-03-06 18:28:16 Job executing on host: <10.138.25.23:44469?CCBID=128.104.103.162:9618%3faddrs%3d128.104.103.162-9618%26alias%3dospool-ccb.osg.chtc.io%26noUDP%26sock%3dcollector1#9122068%20192.170.236.224:9618%3faddrs%3d192.170.236.224-9618+[fd12-3456-789a-10fb-8f8d-c136-1698-b4a3]-9618%26alias%3d192.170.236.224%26noUDP%26sock%3dcollector5#1058594&PrivNet=c2523.crane.hcc.unl.edu&addrs=10.138.25.23-44469&alias=c2523.crane.hcc.unl.edu&noUDP>
+...
+006 (29623128.000.000) 2023-03-06 18:28:17 Image size of job updated: 1
+	6  -  MemoryUsage of job (MB)
+	5920  -  ResidentSetSize of job (KB)
+...
+040 (29623128.000.000) 2023-03-06 18:28:17 Started transferring output files
+...
+040 (29623128.000.000) 2023-03-06 18:28:17 Finished transferring output files
+...
+005 (29623128.000.000) 2023-03-06 18:28:18 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	53  -  Run Bytes Sent By Job
+	188  -  Run Bytes Received By Job
+	53  -  Total Bytes Sent By Job
+	188  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :                 8         8 
+	   Disk (KB)            :   929059  4194304   7696005 
+	   Memory (MB)          :        6     4096      4096 
+
+	Job terminated of its own accord at 2023-03-07T00:28:17Z with exit-code 0.
+...
